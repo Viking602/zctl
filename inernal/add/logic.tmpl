@@ -1,0 +1,27 @@
+package logic
+
+import (
+	"context"
+	"go.uber.org/zap"
+	"{{.ProjectName}}/ent"
+	"{{.ProjectName}}/ent/user"
+	"{{.ProjectName}}/internal/types"
+	"{{.ProjectName}}/pkg/response"
+)
+
+type {{.ServiceName}}{{.LogicName}}Logic struct {
+	client *ent.Client
+	logger *zap.Logger
+}
+
+func New{{.ServiceName}}{{.LogicName}}Logic(client *ent.Client, logger *zap.Logger) *{{.ServiceName}}{{.LogicName}}Logic {
+	return &{{.ServiceName}}Logic{
+		client: client,
+		logger: logger,
+	}
+}
+
+func (l *{{.LogicName}}Logic) {{.LogicName}}() response.Response {
+
+	return response.Success(types.UserInfoResponse{nil})
+}

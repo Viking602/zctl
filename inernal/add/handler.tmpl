@@ -1,0 +1,31 @@
+package handlers
+
+import (
+	"github.com/gin-gonic/gin"
+	"net/http"
+	"{{.ProjectName}}/internal/logic"
+	"{{.ProjectName}}/internal/types"
+	"{{.ProjectName}}/pkg/response"
+)
+
+type {{.ServiceName}}{{.LogicName}}Handler struct {
+	logic *logic.{{.ServiceName}}{{.LogicName}}LoginLogic
+}
+
+func New{{.ServiceName}}Handler(l *logic.{{.ServiceName}}{{.LogicName}}Logic) *{{.ServiceName}}Handler {
+	return &{{.ServiceName}}Handler{
+		logic: l,
+	}
+}
+
+func (l *{{.ServiceName}}Handler) {{.ServiceName}}{{.LogicName}}(c *gin.Context) {
+	var req
+
+	if err := c.ShouldBind(&req); err == nil {
+		res := l.logic.{{.LogicName}}(&req)
+		c.JSON(http.StatusOK, res)
+	} else {
+		c.JSON(http.StatusOK, response.ErrorResponse(err))
+	}
+
+}
