@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/spf13/cobra"
 	"log"
-	"zctl/inernal/add"
+	"zctl/internal/add"
 )
 
 var rootCmd = &cobra.Command{
