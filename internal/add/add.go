@@ -30,12 +30,12 @@ func run(_ *cobra.Command, args []string) {
 	l.LogicName = utils.FirstUpper(logicName)
 	l.ServiceName = utils.FirstUpper(handlerName)
 
-	if err := l.createFile(fmt.Sprintf("inernal/handlers/%v_%v_hander.go", handlerName, logicName), "handler.tmpl"); err != nil {
+	if err := l.createFile(fmt.Sprintf("internal/handlers/%v_%v_hander.go", handlerName, logicName), "handler.tmpl"); err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	if err := l.createFile(fmt.Sprintf("inernal/logic/%v_%v_logic.go", handlerName, logicName), "logic.tmpl"); err != nil {
+	if err := l.createFile(fmt.Sprintf("internal/logic/%v_%v_logic.go", handlerName, logicName), "logic.tmpl"); err != nil {
 		fmt.Println(err)
 		return
 	}
