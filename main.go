@@ -7,9 +7,10 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "zctl",
-	Short: "zctl is a CLI tool for managing Project Zero",
-	Long:  `zctl is a CLI tool for managing Project Zero. It is a tool to manage the Project Zero application.`,
+	Use:     "zctl",
+	Short:   "zctl is a CLI tool for managing Project Zero",
+	Long:    `zctl is a CLI tool for managing Project Zero. It is a tool to manage the Project Zero application.`,
+	Version: version,
 }
 
 func init() {
