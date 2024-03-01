@@ -10,14 +10,12 @@ import (
 )
 
 type {{.ServiceName}}{{.LogicName}}Logic struct {
-	client *ent.Client
-	logger *zap.Logger
+	svc *svc.Service
 }
 
 func New{{.ServiceName}}{{.LogicName}}Logic(client *ent.Client, logger *zap.Logger) *{{.ServiceName}}{{.LogicName}}Logic {
 	return &{{.ServiceName}}Logic{
-		client: client,
-		logger: logger,
+		svc: svc,
 	}
 }
 
